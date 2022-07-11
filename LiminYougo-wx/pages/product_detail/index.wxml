@@ -1,0 +1,65 @@
+<!--pages/product_detail/index.wxml-->
+<view class="detail-swiper">
+    <swiper 
+        autoplay="{{true}}" 
+        circular="{{true}}"
+        indicator-dots="{{true}}"
+    >
+        <swiper-item
+            wx:for="{{productObj.detailsSwiper}}"
+            wx:key="id"
+            bindtap = "handlePrevewImage"
+            data-url="{{item.detailsSrc}}"
+        >
+            <image mode="widthFix" src="{{item.detailsSrc}}"></image>
+        </swiper-item>
+    </swiper>
+</view>
+
+<view class="detail-price">
+    <em>￥<view class="price">{{productObj.products.price}}</view>.00</em>
+</view>
+
+<view class="detail-title-row">
+    <view class="detail-title">{{productObj.products.title}}</view>
+    <view class="detail-collect" bindtap = "handleCollect">
+        <text class="iconfont {{isCollect?'icon-shoucang1-copy':'icon-shoucang'}}"></text>
+        <view class="collect-text">收藏</view>
+    </view>
+</view>
+
+<view class="detail-info">
+    <view class="detail-info-title">图文详情</view>
+    <view class="detail-info-content">
+        <view 
+            class="detail-image"
+            wx:for="{{productObj.detailsImage}}"
+            wx:key="id"
+        >
+            <image mode="widthFix" src="{{item.imageSrc}}"></image>
+        </view>
+    </view>
+</view>
+
+<view class="btm-tool">
+    <view class="tool-item">
+        <view class="iconfont icon-weibiaoti-"></view>
+        <view>客服</view>
+        <button open-type="contact"></button>
+    </view>
+    <view class="tool-item">
+        <view class="iconfont icon-fenxiang"></view>
+        <view>分享</view>
+        <button open-type="share"></button>
+    </view>
+    <navigator open-type="switchTab" url="/pages/cart/cart" class="tool-item">
+        <view class="iconfont icon-shouye"></view>
+        <view>购物车</view>
+    </navigator>
+    <view class="tool-item btn-cart" bindtap="handleCartAdd">
+        <view>加入购物车</view>
+    </view>
+    <view class="tool-item btn-buy">
+        <view>立即购买</view>
+    </view>
+</view>

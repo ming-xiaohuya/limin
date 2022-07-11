@@ -1,0 +1,29 @@
+<!--pages/order/index.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <view class="order-mian">
+        <view 
+            class="order-item"
+            wx:for="{{orders}}"
+            wx:key="id"
+        >
+            <view class="order-no-row">
+                <view class="order-no-img">
+                    <image mode="widthFix" src="{{item.orderSrc}}"></image>
+                </view>
+                <view class="roder-no-value">
+                    <view class="order-no-title">{{item.title}}</view>
+                    <view class="order-no-num">X{{item.orderNum}}</view>
+                </view>
+            </view>
+            <view class="order-price-row">
+                <view class="order-price-text">实付:</view>
+                <view class="order-price-value">￥{{item.price}}</view>
+            </view>
+            <view class="order-item-row">
+                <navigator class="item-link">卖了换钱</navigator>
+                <navigator class="item-link">查看发票</navigator>
+                <navigator class="item-link last">再次购买</navigator>
+            </view>
+        </view>
+    </view>
+</Tabs>

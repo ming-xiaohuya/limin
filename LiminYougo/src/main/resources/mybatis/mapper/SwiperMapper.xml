@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.limin.mapper.SwiperMapper">
+
+    <select id="querySwiperList" resultType="Swiper">
+        select * from swiper
+    </select>
+
+    <insert id="createSwiper" parameterType="Swiper">
+        insert into swiper (id,image_url,image_link,image_alt,createDate) values (#{id},#{imageUrl},#{imageLink},#{imageAlt},#{createDate})
+    </insert>
+
+    <update id="updateSwiper" parameterType="Swiper">
+        update swiper set image_url=#{imageUrl},image_link=#{imageLink},image_alt=#{imageAlt},createDate=#{createDate} where id = #{id}
+    </update>
+
+    <delete id="deleteSwiperById" parameterType="String">
+        delete from swiper where id = #{id}
+    </delete>
+
+</mapper>

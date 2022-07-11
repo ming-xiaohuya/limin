@@ -1,0 +1,119 @@
+/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.uer-info-wrap {
+  height: 45vh;
+  overflow: hidden;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.uer-info-wrap .user-img-wrap {
+  position: relative;
+}
+.uer-info-wrap .user-img-wrap .user-bg {
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.uer-info-wrap .user-img-wrap .user-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 20%;
+  text-align: center;
+}
+.uer-info-wrap .user-img-wrap .user-info .user-icon {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.uer-info-wrap .user-img-wrap .user-info .user-name {
+  color: #000;
+  margin-top: 30rpx;
+  font-size: 40rpx;
+}
+.uer-info-wrap .user-ben {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 40%;
+  border: 1rpx solid greenyellow;
+  color: #fff;
+  font-size: 38rpx;
+  padding: 30rpx;
+  border-radius: 10rpx;
+}
+.user-content {
+  position: relative;
+}
+.user-content .user-mian {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+  color: #666;
+  font-size: 28rpx;
+  padding-bottom: 100rpx;
+}
+.user-content .user-mian .history-wrap {
+  background-color: #fff;
+  display: flex;
+}
+.user-content .user-mian .history-wrap navigator {
+  flex: 1;
+  text-align: center;
+  padding: 10rpx 0;
+}
+.user-content .user-mian .history-wrap navigator .his-num {
+  color: var(--themeColor);
+}
+.user-content .user-mian .history-wrap navigator .his-name {
+  font-size: 28rpx;
+}
+.user-content .user-mian .orders-wrap {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+.user-content .user-mian .orders-wrap .orders-title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-mian .orders-wrap .order-content {
+  display: flex;
+}
+.user-content .user-mian .orders-wrap .order-content navigator {
+  flex: 1;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.user-content .user-mian .orders-wrap .order-content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 60rpx;
+}
+.user-content .user-mian .address-wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.user-content .user-mian .app-info-wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.user-content .user-mian .app-info-wrap .app-info-item {
+  display: flex;
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+.user-content .user-mian .app-info-wrap .app-info-item .app-info-right {
+  flex: 1;
+  text-align: right;
+}
+.user-content .user-mian .app-info-wrap .app-info-item .iconfont {
+  padding: 0 15rpx;
+}
+.user-content .user-mian .recommend-wrap {
+  margin-top: 30rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}

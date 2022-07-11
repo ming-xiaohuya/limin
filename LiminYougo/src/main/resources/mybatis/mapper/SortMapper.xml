@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.limin.mapper.SortMapper">
+
+    <!-- 三表联查 -->
+    <select id="querySortList" resultMap="NavTitle">
+        select * from sort_nav
+    </select>
+    <resultMap id="NavTitle" type="SortNav">
+        <collection property="sortTitles" javaType="ArrayList" ofType="SortTitle" select="getSortNavByTitleId" column="id"/>
+    </resultMap>
+    <select id="getSortNavByTitleId" resultMap="TitleContent">
+        select * from sort_title where nid = #{id}
+    </select>
+    <resultMap id="TitleContent" type="SortTitle">
+        <collection property="sortContents" javaType="ArrayList" ofType="SortContent" select="getSortTitleByContentId" column="id"/>
+    </resultMap>
+    <select id="getSortTitleByContentId" resultType="SortContent">
+        select * from sort_content where tid = #{id}
+    </select>
+
+</mapper>

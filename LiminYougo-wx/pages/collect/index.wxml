@@ -1,0 +1,27 @@
+<!--pages/collect/index.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <view class="collcet-mian">
+        <view class="collect-title">
+            <text class="collect-tips active">全部</text>
+            <text class="collect-tips">正在热卖</text>
+            <text class="collect-tips">即将上线</text>
+        </view>
+        <view class="collect-content">
+            <navigator 
+                class="first-item"
+                wx:for="{{collect}}"
+                wx:key="id"
+                url="/pages/product_detail/index?pid={{item.products.id}}"
+            >
+                <view class="first-img-wrap">
+                    <image mode="widthFix" src="{{item.products.productSrc}}"></image>
+                </view>
+                <view class="first-info-wrap">
+                    <view class="first-title">{{item.products.title}}</view>
+                    <em>￥<view class="first-price">{{item.products.price}}</view></em>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</Tabs>
+

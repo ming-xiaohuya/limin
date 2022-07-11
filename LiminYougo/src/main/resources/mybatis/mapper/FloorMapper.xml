@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.limin.mapper.FloorMapper">
+
+
+    <select id="queryFloorList" resultMap="FloorProductList">
+        select * from floor_title
+    </select>
+    <resultMap id="FloorProductList" type="Floor">
+        <collection property="products" javaType="ArrayList" ofType="ProductList" select="getProductByFloorId" column="id"/>
+    </resultMap>
+    <select id="getProductByFloorId" resultType="ProductList">
+        select * from product_list where fid = #{id}
+    </select>
+
+</mapper>

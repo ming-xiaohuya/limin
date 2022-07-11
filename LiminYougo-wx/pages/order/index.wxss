@@ -1,0 +1,60 @@
+/* pages/order/index.wxss */
+.order-mian .order-item {
+  padding: 20rpx;
+  border-bottom: 1repx solid #ccc;
+  color: #666;
+  font-size: 32rpx;
+}
+.order-mian .order-item .order-no-row {
+  display: flex;
+}
+.order-mian .order-item .order-no-row .order-no-img {
+  flex: 2;
+}
+.order-mian .order-item .order-no-row .order-no-img image {
+  width: 80%;
+}
+.order-mian .order-item .order-no-row .roder-no-value {
+  flex: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.order-mian .order-item .order-no-row .roder-no-value .order-no-title {
+  padding: 0 10rpx;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.order-mian .order-item .order-price-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  border-bottom: 1rpx solid #ccc;
+  padding-bottom: 14rpx;
+}
+.order-mian .order-item .order-price-row .order-price-value {
+  color: #000;
+  font-size: 34rpx;
+  font-weight: 700;
+  padding: 0 10rpx;
+}
+.order-mian .order-item .order-item-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: center;
+}
+.order-mian .order-item .order-item-row .item-link {
+  width: 25%;
+  color: #000;
+  padding: 10rpx 20rpx;
+  margin: 20rpx 10rpx;
+  border: 1rpx solid #666;
+  border-radius: 50rpx;
+}
+.order-mian .order-item .order-item-row .last {
+  color: #e4393c;
+  border: 1rpx solid #e4393c;
+}

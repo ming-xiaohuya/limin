@@ -1,0 +1,23 @@
+<!--pages/product_list/index.wxml-->
+<Tabs tabs="{{tabs}}" bindtabsItemChange="handleTabsItemChange">
+    <block wx:if="{{tabs[0].isActive}}">
+        <view class="first-tab">
+            <navigator 
+                class="first-item"
+                wx:for="{{productList}}"
+                wx:key="id"
+                url="/pages/product_detail/index?pid={{item.id}}"
+            >
+                <view class="first-img-wrap">
+                    <image mode="widthFix" src="{{item.productSrc}}"></image>
+                </view>
+                <view class="first-info-wrap">
+                    <view class="first-title">{{item.title}}</view>
+                    <em>￥<view class="first-price">{{item.price}}</view></em>
+                </view>
+            </navigator>
+        </view>
+    </block>
+    <block wx:elif="{{tabs[1].isActive}}">1</block>
+    <block wx:elif="{{tabs[2].isActive}}">2</block>
+</Tabs>

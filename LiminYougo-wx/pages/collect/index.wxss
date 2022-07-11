@@ -1,0 +1,60 @@
+/* pages/collect/index.wxss */
+.collcet-mian {
+  background-color: #f3f4f6;
+  font-size: 32rpx;
+}
+.collcet-mian .collect-title {
+  padding: 20rpx 0;
+  margin-top: 10rpx;
+}
+.collcet-mian .collect-title .collect-tips {
+  padding: 15rpx;
+  margin-left: 20rpx;
+  border: 1rpx solid #ccc;
+  background-color: #fff;
+}
+.collcet-mian .collect-title .active {
+  color: var(--themeColor);
+  border-color: orangered;
+}
+.collcet-mian .collect-content {
+  background-color: #fff;
+}
+.collcet-mian .collect-content .first-item {
+  display: flex;
+  border-bottom: 2rpx solid #ccc;
+}
+.collcet-mian .collect-content .first-item .first-img-wrap {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.collcet-mian .collect-content .first-item .first-img-wrap image {
+  width: 70%;
+}
+.collcet-mian .collect-content .first-item .first-info-wrap {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.collcet-mian .collect-content .first-item .first-info-wrap .first-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 32rpx;
+}
+.collcet-mian .collect-content .first-item .first-info-wrap em {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+  list-style: normal;
+  font-size: 24rpx;
+  color: #e4393c;
+  font-weight: 400;
+}
+.collcet-mian .collect-content .first-item .first-info-wrap em .first-price {
+  font-size: 32rpx;
+}

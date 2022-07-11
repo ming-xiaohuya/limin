@@ -1,0 +1,29 @@
+<!--components/SearchInput/SearchInput.wxml-->
+<view class="search_input" style="{{'margin-top: ' + navigationBarAndStatusBarHeight}}">
+    <image src="/image/search-bg.png" mode="widthFix" />
+    <navigator url="/pages/search/search" open-type="navigate">
+        <view class="iconfont icon-sousuo"></view>
+        <view class="search-swiper">
+            <swiper 
+                indicator-dots="{{false}}" 
+                autoplay="{{true}}"            
+                current="0" 
+                interval="3000" 
+                duration="1000" 
+                circular="{{true}}" 
+                vertical="{{true}}"
+            >
+                <swiper-item
+                    wx:for="{{searchList}}" 
+                    wx:key="searchList"
+                >
+                    {{item}}
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="searc-btn">搜索</view>
+    </navigator>
+    
+    <!-- <input type="text" /> -->
+    
+</view>

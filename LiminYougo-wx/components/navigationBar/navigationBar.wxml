@@ -1,0 +1,7 @@
+<!--components/navigationBar/navigationBar.wxml-->
+<view class="navigation-container" style="{{'height: ' + navigationBarAndStatusBarHeight}}">
+    <view class="navigation-bar">
+    	<image class="nav-img" src='/image/navigationbar-bg.png' style="{{'height: ' + navigationBarAndStatusBarHeight}}"/>
+        <view class="navigation-title" style="{{'line-height:' + navigationBarHeight}}">丽民优购</view>
+    </view> 
+</view>

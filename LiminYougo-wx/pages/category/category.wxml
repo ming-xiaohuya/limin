@@ -1,0 +1,41 @@
+<!--pages/category/category.wxml-->
+<view class="sort">
+    <view class="sort-container">
+        <!-- 左侧菜单 -->
+        <scroll-view scroll-y="{{true}}" class="left-menu">
+            <view 
+                class="menu-item {{index === currentIndex?'active':''}}"
+                wx:for="{{leftMenuList}}"
+                wx:key="this"
+                bindtap = "handleItemTap"
+                data-index="{{index}}"
+            >
+                {{ item }}
+            </view>
+        </scroll-view>
+        <!-- 右侧商品内容 -->
+        <scroll-view scroll-y="{{true}}" class="right-content">
+            <view 
+                class="content-group"
+                wx:for="{{rightContent}}"
+                wx:for-index="index1"
+                wx:for-item="item1"
+                wx:key="id"
+            >
+                <view class="content-tltle">{{ item1.name }}</view>
+                <view class="content-list">
+                    <navigator
+                        wx:for="{{item1.sortContents}}"
+                        wx:for-index="index2"
+                        wx:for-item="item2"
+                        wx:key="id"
+                        url="/pages/product_list/index?cid={{item2.id}}"
+                    >
+                        <image mode="widthFix" src="{{item2.sortSrc}}"></image>
+                        <view class="com-name">{{ item2.name }}</view>
+                    </navigator>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

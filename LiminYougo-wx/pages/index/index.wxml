@@ -1,0 +1,65 @@
+<!--index.wxml-->
+<view class="pyg_index">
+    <navigationBar></navigationBar>
+    <!-- 搜索框 开始 -->
+    <SearchInput></SearchInput>
+    <!-- 搜索框 结束 -->
+    <!-- 轮播图 开始 -->
+    <view class="index-swiper">
+        <swiper indicator-dots="{{indeicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" indicator-color="{{indicatorColor}}" indicator-active-color="{{activeColor}}">
+            <swiper-item
+                wx:for="{{swiperList}}" 
+                wx:key="id"
+            >
+                <navigator>
+                    <image mode="widthFix" src="{{item.imageUrl}}" class="slide-image" bindtap="swiperChange" />
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <!-- 轮播图 结束 -->
+    <!-- 导航栏 开始 -->
+    <view class="index-nav">
+        <navigator
+            wx:for="{{navList}}"
+            wx:key="id"
+            url="{{item.navUrl}}"
+            open-type="switchTab"
+        >
+            <image mode="widthFix" src="{{item.navSrc}}"></image>
+            <view class="index-nav-title">{{item.title}}</view>
+        </navigator>
+    </view>
+    <!-- 导航栏 结束 -->
+    <!-- 秒杀 开始 -->
+    <view class="index-spike">
+        <view class="spike">
+            <view class="spike-title">丽民秒杀</view>
+            <view class="spike-content">
+                <view class="spike-item" wx:for="{{spikeList}}" wx:key="id">
+                    <navigator>
+                        <image src="{{item.spikeSrc}}" mode="widthFix"></image>
+                    </navigator>
+                    <view class="spike-text">￥{{item.spikePrice}}</view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <!-- 秒杀 结束 -->
+    <!-- 楼层 开始 -->
+    <view class="index-floor">
+        <navigator
+            wx:for="{{productList}}"
+            wx:key="id"
+        >
+            <view class="floor-group">
+                <view class="floor-image">
+                    <image src="{{item.productSrc}}" mode="widthFix"></image>
+                </view>
+                <view class="floor-title">{{item.title}}</view>
+                <em>￥<view class="floor-text">{{item.price}}</view></em>
+            </view>
+        </navigator>
+    </view>
+    <!-- 楼层 结束 -->
+</view>

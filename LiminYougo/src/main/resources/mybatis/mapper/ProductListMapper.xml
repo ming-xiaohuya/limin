@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.limin.mapper.ProductListMapper">
+
+    <select id="queryProductList" resultType="ProductList">
+        select * from product_list
+    </select>
+
+    <insert id="createProduct" parameterType="ProductList">
+        insert into product_list (name,image_src,image_url,createDate) values (#{name},#{imageSrc},#{imageUrl},#{createDate})
+    </insert>
+
+</mapper>

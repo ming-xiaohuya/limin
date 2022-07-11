@@ -1,0 +1,54 @@
+<!--pages/pay/index.wxml-->
+<view class="revice-address-row">
+    <view class="user-info-row">
+        <view class="user-info">
+            <view class="user">收货人：{{address.userName}}</view>
+            <view class="user-phone">手机号码：{{address.telNumber}}</view>
+        </view>
+        <view>收货地址：{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</view>
+    </view>
+</view>
+
+<view class="cart-content">
+    <view class="cart-title">订单详情</view>
+    <view class="cart-mian">
+        <view 
+            class="cart-item"
+            wx:for="{{cart}}"
+            wx:key="id"
+        >
+            <!-- 商品图片 -->
+            <navigator class="cart-img-wrap">
+                <image mode="widthFix" src="{{item.products.productSrc}}"></image>
+            </navigator>
+            <!-- 商品信息 -->
+            <view class="cart-info-wrap">
+                <view class="cart-name">{{item.products.title}}</view>
+                <view class="cart-price-wrap">
+                    <view class="cart-price">￥{{item.products.price}}</view>
+                    <view class="cart-num-tool">
+                        <view class="cart-num">x{{item.num}}</view>
+                    </view>
+                </view>
+            </view>
+
+            <!-- <view class="cart-xq-wrap">
+                <view>商品金额</view>
+                <view>￥{{item.products.price}}</view>
+            </view> -->
+        </view>
+    </view>
+</view>
+
+<view class="footer-tool">
+    <view class="total-price-wrap">
+        <view class="total-price">
+            合计：<text class="total-price-text">￥{{totalPrice}}</text>
+        </view>
+        <view>包含运费</view>
+    </view>
+    <view class="order-pay-wrap">
+        结算({{totalNum}})
+    </view>
+</view>
+
